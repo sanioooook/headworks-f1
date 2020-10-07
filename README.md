@@ -1,6 +1,6 @@
 # Headworks F1 Homepage
 
-## Your task
+## Technical specification
 We decided to run own formula1 team. But we need some landing page, to promote our team.
 Our designer designed landing page and you need to layout it from scratch.
 
@@ -20,9 +20,9 @@ You can find design [here](https://www.figma.com/file/80sxh0hx8V8jd8ikcsgQSW/Hea
 * have fun =)
 
 ## Requirements
-3. You should use semantic html5
-2. Your layout should adopt for mobile devices
-1. You should use [bem](https://en.bem.info/methodology/naming-convention/) for class names
+3. Should use semantic html5
+2. Layout should adopt for mobile devices
+1. Should use [bem](https://en.bem.info/methodology/naming-convention/) for class names
 
-## Finish your work
-When you will be ready - share your link with our HR manager
+## Demo
+[![Edit lr2](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/lr2-g248w?fontsize=14&theme=dark&view=preview)
