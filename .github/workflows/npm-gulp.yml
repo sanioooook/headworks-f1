@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "master" ]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,10 +30,21 @@ jobs:
         npm install
         npm run build
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.5
-      with:
-        branch: master # The branch the action should deploy to.
-        folder: ./dist # The folder the action should deploy.
-        repository: sanioooook/sanioooook.github.io # The repository the action should deploy to.
-        token: ${{ secrets.GITHUB_TOKEN }} # The GITHUB_TOKEN secret
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
