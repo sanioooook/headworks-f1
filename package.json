@@ -4,7 +4,8 @@
   "description": "Simple gulp configuration for fast project start",
   "main": "app/index.html",
   "scripts": {
-    "start": "gulp cleanimg && gulp"
+    "start": "gulp cleanimg && gulp",
+    "build": "gulp build"
   },
   "author": "@anisimovv",
   "license": "ISC",
